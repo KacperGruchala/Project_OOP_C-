@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zestaw 3</name>
+    </assembly>
+    <members>
+        <member name="T:Zestaw_3.Automat">
+            <summary>
+            Klasa reprezentująca automat przechowujący i sprzedający produkty.
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Automat.DodajProdukt(Zestaw_3.ISprzedaz)">
+            <summary>
+            Dodaje nowy produkt do asortymentu automatu.
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Automat.WyswietlKatalog">
+            <summary>
+            Wyświetla aktualną listę produktów w automacie.
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Automat.KupProdukt(System.String,System.Double)">
+            <summary>
+            Proces zakupu produktu na podstawie kodu.
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Kategoria">
+            <summary>
+            Typ wyliczeniowy określający kategorie produktu w automacie.
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.ISprzedaz">
+            <summary>
+            Interfejs definiujący podstawowe właściwości i metody dla każdego obiektu przeznaczonego do sprzedaży.
+            </summary>
+        </member>
+        <member name="P:Zestaw_3.ISprzedaz.Kod">
+            <summary>
+            Właściwości wymagane przez interfejs
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.ISprzedaz.WyswietlSzczegoly">
+            <summary>
+            Wyświetla szczegółowe informacje o produkcie w konsoli.
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Napoj">
+            <summary>
+            Klasa reprezentująca napój, dziedzicząca po klasie Produkt.
+            </summary>
+        </member>
+        <member name="P:Zestaw_3.Napoj.pojemnoscMl">
+            <summary>
+            Nowa właściwość specyficzna dla napojów
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Napoj.#ctor(System.String,System.Double,System.String,System.Int32)">
+            <summary>
+            Konstruktor główny korzystający z konstruktora bazy
+            </summary>
+            <param name="nazwa">Nazwa napoju</param>
+            <param name="cena">Cena napoju</param>
+            <param name="kod">Kod napoju</param>
+            <param name="pojemnoscMl">Pojemność napoju w mililitrach</param>
+        </member>
+        <member name="M:Zestaw_3.Napoj.#ctor(System.String,System.Double,System.Int32)">
+            <summary>
+            Konstruktor przeciążony dla napoju
+            </summary>
+            <param name="nazwa">Nazwa napoju</param>
+            <param name="cena">Cena napoju</param>
+            <param name="pojemnoscMl">Pojemność napoju w mililitrach</param>
+        </member>
+        <member name="M:Zestaw_3.Napoj.WyswietlSzczegoly">
+            <summary>
+            Metoda wyświetlająca szczegóły napoju
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Produkt">
+            <summary>
+            Abstrakcyjna klasa bazowa reprezentująca ogólny produkt. Implementuje interfejs ISprzedaz.
+            </summary>
+        </member>
+        <member name="F:Zestaw_3.Produkt.nazwa">
+            <summary>
+            Pola w klasie (private oraz protected)
+            </summary>
+        </member>
+        <member name="P:Zestaw_3.Produkt.Nazwa">
+            <summary>
+            Właściwości z getterami i setterami (get i set)
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Produkt.#ctor(System.String,System.Double,System.String,Zestaw_3.Kategoria)">
+            <summary>
+            Główny konstruktor
+            </summary>
+            <param name="nazwa">Nazwa produktu</param>
+            <param name="cena">Cena produktu</param>
+            <param name="kod">Kod produktu</param>
+            <param name="kategoria">Kategoria produktu</param>
+        </member>
+        <member name="M:Zestaw_3.Produkt.#ctor(System.String,System.Double,Zestaw_3.Kategoria)">
+            <summary>
+            Przeciążenie konstruktora - domyślny kod "00"
+            </summary>
+            <param name="nazwa">Nazwa produktu</param>
+            <param name="cena">Cena produktu</param>
+            <param name="kategoria">Kategoria produktu</param>
+        </member>
+        <member name="M:Zestaw_3.Produkt.WyswietlSzczegoly">
+            <summary>
+            Metoda wyświetlająca szczegóły produktu
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Program">
+            <summary>
+            Główna klasa uruchomieniowa programu prezentująca działanie automatu.
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Przekaska">
+            <summary>
+            Klasa reprezentująca przekąskę, dziedzicząca po klasie Produkt.
+            </summary>
+        </member>
+        <member name="P:Zestaw_3.Przekaska.wagaGramy">
+            <summary>
+            Specyficzna właściwość dla przekąsek
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Przekaska.#ctor(System.String,System.Double,System.String,System.Double)">
+            <summary>
+            Konstruktor główny korzystający z konstruktora bazy
+            </summary>
+            <param name="nazwa">Nazwa przekąski</param>
+            <param name="cena">Cena przekąski</param>
+            <param name="kod">Kod przekąski</param>
+            <param name="wagaGramy">Waga przekąski w gramach</param>
+        </member>
+        <member name="M:Zestaw_3.Przekaska.WyswietlSzczegoly">
+            <summary>
+            Metoda wyświetlająca szczegóły przekąski
+            </summary>
+        </member>
+        <member name="T:Zestaw_3.Slodycz">
+            <summary>
+            Klasa reprezentująca słodycz, dziedzicząca po klasie Produkt.
+            </summary>
+        </member>
+        <member name="P:Zestaw_3.Slodycz.czyZawieraOrzechy">
+            <summary>
+            Specyficzna właściwość dla słodyczy (np. informacja o alergenach)
+            </summary>
+        </member>
+        <member name="M:Zestaw_3.Slodycz.#ctor(System.String,System.Double,System.String,System.Boolean)">
+            <summary>
+            Konstruktor główny korzystający z konstruktora bazy
+            </summary>
+            <param name="nazwa">Nazwa słodyczy</param>
+            <param name="cena">Cena słodyczy</param>
+            <param name="kod">Kod słodyczy</param>
+            <param name="czyZawieraOrzechy">Informacja o zawartości orzechów</param>
+        </member>
+        <member name="M:Zestaw_3.Slodycz.#ctor(System.String,System.Double,System.Boolean)">
+            <summary>
+            Konstruktor przeciążony dla słodyczy
+            </summary>
+            <param name="nazwa">Nazwa słodyczy</param>
+            <param name="cena">Cena słodyczy</param>
+            <param name="czyZawieraOrzechy">Informacja o zawartości orzechów</param>
+        </member>
+        <member name="M:Zestaw_3.Slodycz.WyswietlSzczegoly">
+            <summary>
+            Metoda wyświetlająca szczegóły słodyczy
+            </summary>
+        </member>
+    </members>
+</doc>
